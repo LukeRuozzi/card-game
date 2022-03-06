@@ -17,7 +17,7 @@
   left: 0;
   height: 300px;
   cursor: pointer;
-  transition: all var(--transition-time);
+  transition: transform var(--transition-time);
 }
 
 .front {
@@ -28,16 +28,18 @@
 }
 
 .back {
-  opacity: 1;
+  /*opacity: 1;*/
   transform: rotateY(0deg);
-  transition: all var(--transition-time) !important;
+  animation: opacityInAnimation var(--transition-time);
+  transition: transform var(--transition-time) !important;
 }
 
 .front-flip {
   z-index: 0;
   opacity: 1;
   transform: rotateY(0deg);
-  transition: all var(--transition-time) !important;
+  animation: opacityInAnimation var(--transition-time);
+  transition: transform var(--transition-time) !important;
 }
 
 .back-flip {
@@ -45,4 +47,22 @@
   opacity: 0;
   transform: rotateY(180deg);
   transition: none !important;
+}
+
+@keyframes opacityInAnimation {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
 }
