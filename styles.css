@@ -28,7 +28,8 @@
 }
 
 .back {
-  /*opacity: 1;*/
+  backface-visibility: hidden;
+  /*transform-origin: center right;*/
   transform: rotateY(0deg);
   animation: opacityInAnimation var(--transition-time);
   transition: transform var(--transition-time) !important;
